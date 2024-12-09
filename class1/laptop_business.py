@@ -5,6 +5,9 @@ class Laptop_Business(Laptop):
         self.almacenamiento = almacenamiento
         self.duracion_bateria = duracion_bateria
     
+    def __str__(self):
+        return f"Marca: {self.marca} \n Procesador: {self.procesador} \n Memoria: {self.memoria} \n Almacenamiento: {self.almacenamiento} \n Duración de Bateria: {self.duracion_bateria} \n Costo: {self.costo} \n Impuesto: {self.impuesto}"
+    
     def realizar_diagnostico_sistema(self):
         resultado_diagnostico = super().realizar_diagnostico_sistema()
         diagnostico_mas = self.realizar_diagnostico_mas()
@@ -28,7 +31,15 @@ class Laptop_Business(Laptop):
         for i in range(10):
             print("Respuesta desde 192.140.100.1: bytes=32 tiempo=71ms TTL=116")
 
-            
+    def realizar_informe_uso(self):
+        informe = super().realizar_informe_uso()
+        informe.update({
+            "Tipo": "Trabajo",
+            "Uso recomendado": "Trabajos y oficina",
+            "Horas de uso": 20,
+            "Recomendaciones de software": ["Antivirus", "Office"]
+        })
+        return informe       
         
 
         

@@ -19,4 +19,14 @@ laptop_chamba = Laptop_Business("Hp", "i3", 4, 500, 5)
 #    print(asus_laptop.__dict__)
 
 #print(Laptop_Juanito.realizar_diagnostico_sistema())
-print(laptop_chamba.realizar_diagnostico_sistema())
+
+def imprimir_informe(Laptop):
+    informe = Laptop.realizar_informe_uso()
+    for clave, valor in informe.items():
+        print(f"{clave} : {valor}")
+    print("\n")
+
+print("PEPITO:")
+imprimir_informe(laptop_Pepito)
+print("JUANITO:")
+imprimir_informe(Laptop_Juanito)
